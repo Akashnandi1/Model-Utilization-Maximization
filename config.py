@@ -1,0 +1,36 @@
+global DATASET
+global PATH_SRC
+global SRC
+global PATH_ADP
+global ADP
+global SPLIT_TRAIN_PATH
+global SPLIT_TEST_PATH
+global SAMPLE_THRESHOLD
+global IMG_SIZE
+global AUG_COUNT
+
+DATASET = './datasets/DomainNet'
+
+SRC = 'clipart'
+ADP = 'sketch'
+
+SRC_SPLIT_TEST_PATH = None
+SRC_SPLIT_TRAIN_PATH = None
+
+ADP_SPLIT_TEST_PATH = None
+ADP_SPLIT_TRAIN_PATH = None
+
+SAMPLE_THRESHOLD = None
+
+if DATASET == './datasets/DomainNet':
+	SRC_SPLIT_TRAIN_PATH = DATASET+'/'+SRC+'_train.txt'
+	SRC_SPLIT_TEST_PATH = DATASET+'/'+SRC+'_test.txt'
+	ADP_SPLIT_TEST_PATH = DATASET+'/'+ADP+'_test.txt'
+	ADP_SPLIT_TRAIN_PATH = DATASET+'/'+ADP+'_train.txt'
+	SAMPLE_THRESHOLD = 199
+
+PATH_SRC = DATASET+'/'+SRC+'/'
+PATH_ADP = DATASET+'/'+ADP+'/'
+
+IMG_SIZE = 240
+AUG_COUNT = 50

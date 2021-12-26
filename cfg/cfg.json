@@ -1,0 +1,40 @@
+{
+    "experiment": {
+        "name": "SVHN vgg11 Pretrain",
+        "project_name": "swades",
+        "description": "SVHN vgg11 Pretrain",
+        "output_location": "/storage/home/hcocice1/anandi34/CS8803LS/Swades-SFDA/outputs/",
+        "overwrite": false,
+        "load": null,
+        "resume": false
+    },
+    "data": {
+        "source": "svhn",
+        "target": "mnist"
+    },
+    "model": {
+        "pretraining": true,
+        "method": "pretrain",
+        "architecture": "vgg11",
+        "epochs": 200,
+        "modes": [
+            "train",
+            "val"
+        ],
+        "optimizer": {
+            "name": "SGD",
+            "args": {
+                "lr": 1e-1,
+                "momentum": 0.9,
+                "nesterov": true
+            }
+        },
+        "scheduler": {
+            "name": "MultiStepLR",
+            "args":{
+                "milestones": [125, 175],
+                "gamma": 0.1
+            }
+        }
+    }
+}
